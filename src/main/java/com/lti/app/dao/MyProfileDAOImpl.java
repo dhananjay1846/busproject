@@ -3,6 +3,7 @@ package com.lti.app.dao;
 import java.util.List;
 
 import javax.persistence.EntityManager;
+import javax.persistence.Query;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -31,8 +32,17 @@ public class MyProfileDAOImpl implements MyProfileDAO {
 	@Override
 	public boolean updateProfile(MyProfile profile) {
 		// TODO Auto-generated method stub
+		
 		eMan.merge(profile);
-		return true;
+		   return true;
+		
+	}
+	
+	@Override
+	public MyProfile findProfile(String pid) {
+		// TODO Auto-generated method stub
+		MyProfile obj=eMan.find(MyProfile.class, pid);
+		return obj;
 	}
 
 	@Override
@@ -47,5 +57,7 @@ public class MyProfileDAOImpl implements MyProfileDAO {
 		// TODO Auto-generated method stub
 		return eMan.createQuery("from MyFeedback").getResultList();
 	}
+
+	
 
 	}

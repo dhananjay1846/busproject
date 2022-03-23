@@ -14,6 +14,9 @@ public interface MyProfileDAO {
 	
 	public boolean addFeedback(MyFeedback feedback);
 	public List<MyFeedback> getFeedback();
+	
+	
+	public MyProfile findProfile(String pid);
 
 
 }

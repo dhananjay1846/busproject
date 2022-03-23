@@ -35,6 +35,12 @@ public class MyProfileServiceImpl implements MyProfileService{
 		// TODO Auto-generated method stub
 		return pdao.updateProfile(profile);
 	}
+	
+	@Override
+	public MyProfile findProfile(String pid) {
+		// TODO Auto-generated method stub
+		return pdao.findProfile(pid);
+	}
 
 	@Override
 	public boolean addFeedback(MyFeedback feedback) {
@@ -48,6 +54,8 @@ public class MyProfileServiceImpl implements MyProfileService{
 		// TODO Auto-generated method stub
 		return pdao.getFeedback();
 	}
+
+	
 
 	
 	
